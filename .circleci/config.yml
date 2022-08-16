@@ -64,8 +64,6 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             echo "Deploying backend"
-            eb init udagram-api --platform node.js --region us-east-1
-            eb use udagram-api-environment
             eb deploy udagram-api-environment
             eb setenv JWT_SECRET=$JWT_SECRET
             eb setenv PORT=$PORT
