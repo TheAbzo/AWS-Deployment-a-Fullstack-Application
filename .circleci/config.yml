@@ -63,18 +63,9 @@ jobs:
           name: Deploy App
           # TODO: Install, build, deploy in both apps
           command: |
-            echo "Deploying backend"
-            eb init udagram-api --platform node.js --region us-east-1
-            eb use udagram-api-environment
-            eb deploy udagram-api-environment
-            eb setenv JWT_SECRET=$JWT_SECRET
-            eb setenv PORT=$PORT
-            eb setenv POSTGRES_DB=$POSTGRES_DB 
-            eb setenv POSTGRES_HOST=$POSTGRES_HOST 
-            eb setenv POSTGRES_PASSWORD=$POSTGRES_PASSWORD 
-            eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
-            echo "Deploying frontend"
-            aws s3 cp --recursive --acl public-read ./www s3://589014390805-abzo-udacity-third-project/
+            echo "Deploying backend and frontend"
+            npm run deploy
+
 workflows:
   udagram:
     jobs:
