@@ -66,6 +66,7 @@ jobs:
             echo "Deploying backend"
             eb init udagram-api --platform node.js --region us-east-1
             eb use udagram-api-environment
+            eb setenv JWT_SECRET=$JWT_SECRET PORT=$PORT POSTGRES_DB=$POSTGRES_DB POSTGRES_HOST=$POSTGRES_HOST POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_USERNAME=$POSTGRES_USERNAME URL=$URL
             eb deploy udagram-api-environment
             echo "Deploying frontend"
             aws s3 cp --recursive --acl public-read ./www s3://589014390805-abzo-udacity-third-project/
