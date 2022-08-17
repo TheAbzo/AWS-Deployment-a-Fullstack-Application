@@ -1,9 +1,11 @@
 # App dependencies
 
 The App uses:
-- Node.js version 14
-- AWS CLI
+- Node v14.15.1 (LTS)
+- AWS CLI v2
 - EB CLI
+- A RDS database running Postgres.
+- A S3 bucket.
 
 ## Installation
 - git clone app
