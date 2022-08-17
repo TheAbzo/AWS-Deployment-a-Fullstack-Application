@@ -1,4 +1,4 @@
-# Hosting a Full-Stack Application
+# Hosting a Full-Stack Application Using AWS & CircleCI
 
 ## Dependencies & Installation
 Check in **documentation folder**
